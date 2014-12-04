@@ -1,0 +1,184 @@
+   <!DOCTYPE html>   
+<html>
+ <head>
+  <meta charset="utf-8">
+    <title>Dr. Mike's Place</title>
+   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.html">
+     <link rel="stylesheet" type="text/css" href="css/about.html">
+     <link rel="stylesheet" type="text/css" href="css/us.html">
+     <link rel="stylesheet"type="text/css"  href="css/lunch-menu.html">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+            <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href='http://fonts.googleapis.com/css?family=Inconsolata|Dosis:300' rel='stylesheet' type='text/css'>
+      <link href="css/grow.css" rel="stylesheet" media="all">
+  </head>
+<body class="border">
+  <header id="logo">DR. MIKE'S MADNESS CAFE
+    <img src="img/IMG_1192.png">
+  </header>
+    <div id="background">
+    <h2 id="know">Get to Know Us</h2>
+      <p id="best">"Best Breakfast in Town!"</p>
+       <section>
+        <div class="option">
+         <a href="index.html" class="frontlinkone grow"> Home</a><br>
+         <a href="menu.html" class="frontlinktwo grow">Breakfast</a><br>
+         <a href="lunch-menu.html" class="frontlinkthree grow">Lunch Menu</a><br>
+         <a href="about.html" class="frontlinkfour grow"> Reviews </a><br>
+        </div>
+      </section>
+        <div class="words">
+          <p>
+            
+
+Download the script files
+
+Take a look at the randomly displayed content demo
+
+Take a look at randomly rotating content demo
+Let’s Get Started
+
+So first the markup. I placed all of the "did you know" tips into one unordered list:
+
+The idea is to HIDE all of the tips and then display randomly chosen one using JavaScript.
+
+So to style and hide the tips we use the following CSS code:
+
+#tips, #tips li{
+  margin:0;
+  padding:0;
+  list-style:none;
+  }
+#tips{
+  width:250px;
+  font-size:16px;
+  line-height:120%;
+  }
+#tips li{
+  padding:20px;
+  background:#e1e1e1;
+  display:none; /* hide the items at first only */
+  }
+
+The downside to this solution is that initially all of the tips are hidden, so users with disabled JavaScript and enabled CSS will not be able to see them at all while users with disabled JS/CSS (as well as search engines) will see all of them.
+
+To display one of them randomly we will use small jQuery script. Of course you will have to download jQuery put it somewhere on your server and link to it by placing this code inside the head tag of your document (link to your jQuery.js file).
+
+
+
+this.
+
+Short one isn’t it. Take a look at the demo (refresh the page couple of times) to see how it works.
+Taking it One Step Further
+
+If this simple functionality doesn’t satisfy you, here’s more. With modifying the above code a bit we can get fade in/out tips that rotate randomly. Of course the code doesn’t allow same tip to display twice in a row.
+Note that you are able to modify length of the pause between random rotations.
+    
+Take a look at this demo to see it in action.
+
+Thanks for reading this! If you liked the script please remember to bookmark it, share it and subscribe to rss feed using the links below :) Cheers!
+Enjoyed the article?
+
+Then don't miss our next one! Subscribe to our RSS feed or share it with your friends.
+
+Share on FacebookTweet thisDeliciousStumbleUpon RedditSubscribe
+Comments (20 Comments)
+
+    Jasmin HalkiÄ‡
+    August 31, 2009
+    Awesome... Nice and useful article.
+
+    Veerendra
+    August 31, 2009
+    wow .. wonderful article, I was thinking about that kind of stuff .. is it possible to access this code through Wordpress ? thanks for sharing !!!
+
+    Pieter
+    August 31, 2009
+    About the automatic rotating content, there's always a flash of white background when it rotates. It's easily fixed: apply background:#e1e1e1; to #tips too. That should fix it, the background doesn't flash anymore! And about the accessibility issue: Remove display: none; from the CSS and modify the Javascript to this: $(document).ready(function(){ $("#tips li").hide(); randomtip(); }); And tataa, every user sees the list: CSS, no JS; No CSS, JS; Both; None. Nice script ;)
+
+    cssglobe
+    August 31, 2009
+    @Pieter: if you use $("#tips li").hide(); in JS you will have all of the tips displayed before page loads and then when the page-load is done the script will hide all tips and show one. I wanted to avoid that to be honest.
+
+    Dalesh Kowlesar
+    August 31, 2009
+    This can be very useful. Thanks!
+
+    cancel bubble
+    August 31, 2009
+    I'm curious, why are you doing: this.randomtip = function(){ In particular, why are you using "this" and not var - or better yet, wrapping it up in a singleton/module pattern?
+
+    cssglobe
+    August 31, 2009
+    @cancel bubble: a habit, nothing else.
+
+    Enrico Lamperti
+    August 31, 2009
+    Nice and simple!
+
+    Rahul - Web Guru
+    August 31, 2009
+    Quite nice and tidy... thanks.
+
+    Diego
+    August 31, 2009
+    Ellegant and simple, Thanks!
+
+    Vicky Rowe
+    September 2, 2009
+    Cool code, works as it should!! After a couple hours of playing with code, this is a great find. I set the width in the CSS, and it is displaying wide. Ideas on how to get the width to adhere to 215? Currently it seems to be showing at about 400px wide...... page is at http://www.satoridigitalmarketing.com/clients/traverslasik/template.html Vicky
+
+    cssglobe
+    September 2, 2009
+    @Vicky: the css for this script is pretty basic and straightforward. What you should look out for is inherited css as well as extra elements (I noticed an empty <p> in your source code).
+
+    Vicky Rowe
+    September 2, 2009
+    Thanks. I'll dig it out. The CSS for this durn site (I'm doing a re-write from someone elses code) is a labyrinth, spread across several files. I need a ball of string to leave myself a path to find my way back out, LOL.
+
+    Randy Verbeck
+    September 2, 2009
+    @cssglobe: I've adopted your script into a client's website. The tips are near the bottom of the page. However when you scroll to very bottom, it jumps up a bit when the tip changes. I'll scroll down again, and it jumps up with the next tip. Any ideas?
+
+    Randy Verbeck
+    September 2, 2009
+    Nevermind on that. Wrapped it in a div and problem solved.
+
+    M Patel
+    September 5, 2009
+    Simply superb post. I have enjoyed this post along with other popular articles such as "Wordpress Find Pages Top Level Parent ID". I have marked your blog as one of the Top 100 Nice blogs - see it here: http://kpobuddy.wordpress.com/2009/07/22/top-class-100-blogs-for-website-designers-and-web-developers/
+
+    Susan
+    September 9, 2009
+    I recently came across your blog and have been reading along. I thought I would leave my first comment. I don't know what to say except that I have enjoyed reading. Nice blog. I will keep visiting this blog very often. Susan http://dclottery.info
+
+    Helio Pascoal
+    September 16, 2009
+    I liked it a lot. I'm designing our church's website and I came accross a little problem. I've tried to use both scripts in the page, one for a rotating news and the other for a random bible verse. But they don't work together. Would you help me with that? Thanks
+
+    Schop
+    September 24, 2009
+    I like this! Simple solution to something a lot of people want on their blogs or webapges....
+
+    Brian
+    September 30, 2009
+    Using the random version on Safari 4.0.3, I noticed that sometimes the the div disappears on a refresh
+
+Sorry, the comment form is closed at this time.
+       
+          </p>
+        </div>
+     <div id="faces">
+       <a href="https://www.facebook.com/DrMikesMadnessCafe?fref=photo"><img src="img/FB_FindUsOnFacebook-144.png"></a>
+     </div> 
+    <footer> 
+       <div class="thanks">  <span id="thankyou">Thank you for joining our little family at:</span> <br> Dr Mike's Madness Cafe<br>
+      12 Main Street<br>
+      Lisbon Falls, Maine 04252 &nbsp; &#9786;<br>
+      </div>
+     </div>
+   </footer>
+</body>
+</html>

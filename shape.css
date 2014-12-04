@@ -1,0 +1,50 @@
+
+
+/**********************
+*      Home Page      *
+***********************/
+html {
+	background-color: black;
+}
+
+#special {
+	font-size: 0.5em;
+}
+
+.frontlinks {
+	color:#660066;
+}
+
+.menuone {
+	font-size: 1.5em;
+	text-decoration: none;
+}
+
+
+
+/**********************
+*          About       *
+***********************/
+
+#headline {
+	border: solid;
+	background-color: white;
+}
+
+.news {
+float: right;
+border: 10px ridge green;
+padding: 1em;
+}
+
+
+p {
+font-family: 'Inconsolata'
+}
+
+span {
+	font-style: italic;
+	font-weight: bold;
+	font-family: 'Inconsolata';
+
+}
